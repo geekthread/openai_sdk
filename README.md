@@ -4,7 +4,7 @@ A minimal demo of the [OpenAI Agents SDK](https://github.com/openai/openai-agent
 
 ## What it does
 
-Creates an `Agent` that tells jokes and tailors its humor to the user's interests, then runs it against a sample prompt using `Runner.run`. The interaction is wrapped in a named `trace` for observability.
+Creates an `Agent` that tells jokes and tailors its humor to the user's interests. At runtime it prompts you for a subject, tells a joke, then loops back to ask again. Type `quit` or `bye` to exit. Each interaction is wrapped in a named `trace` for observability.
 
 ## Requirements
 
@@ -31,7 +31,14 @@ Creates an `Agent` that tells jokes and tailors its humor to the user's interest
 uv run python main.py
 ```
 
-The agent's response will be printed to stdout.
+You will be prompted to enter a subject after each joke. The loop continues until you type `quit` or `bye`:
+
+```
+What would you like to hear a joke about? (type 'quit' or 'bye' to exit) cats
+<agent tells a joke>
+What would you like to hear a joke about? (type 'quit' or 'bye' to exit) bye
+Goodbye!
+```
 
 ## Dependencies
 
